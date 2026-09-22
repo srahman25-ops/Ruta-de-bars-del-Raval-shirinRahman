@@ -1,0 +1,498 @@
+:root {
+    --azul-profundo: #0d2b4d;
+    --azul: #1464a5;
+    --azul-brillante: #2f8edb;
+    --azul-suave: #e7f3fc;
+    --hielo: #f5f8fb;
+    --blanco: #ffffff;
+    --texto: #172b3e;
+    --texto-suave: #6d7e8e;
+    --borde: #d7e2eb;
+    --sombra: 0 1.25rem 3rem rgba(13, 43, 77, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--hielo);
+    color: var(--texto);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 0.2rem solid var(--azul-brillante);
+    outline-offset: 0.2rem;
+}
+
+.contenedor-principal {
+    min-height: 100vh;
+}
+
+#acceso {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+    margin: 4rem auto;
+    max-width: 70rem;
+    min-height: 38rem;
+    overflow: hidden;
+    width: calc(100% - 3rem);
+}
+
+.acceso-presentacion {
+    background: var(--azul-profundo);
+    color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.5rem, 7vw, 6rem);
+    position: relative;
+}
+
+.acceso-presentacion::after {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    content: "";
+    height: 27rem;
+    position: absolute;
+    right: -11rem;
+    top: -7rem;
+    width: 27rem;
+}
+
+.marca,
+.etiqueta-seccion {
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.marca {
+    color: var(--azul-brillante);
+    margin-bottom: 4rem;
+}
+
+.marca-clara {
+    color: #9dd5fb;
+    margin: 0;
+}
+
+.etiqueta-seccion {
+    color: var(--azul-brillante);
+}
+
+.acceso-presentacion .etiqueta-seccion {
+    color: #9dd5fb;
+    margin-bottom: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+p {
+    line-height: 1.25;
+}
+
+#tituloAcceso {
+    font-size: clamp(2.3rem, 5vw, 4.4rem);
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    max-width: 31rem;
+}
+
+.texto-intro {
+    color: #c8d7e5;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+    max-width: 26rem;
+}
+
+.detalle-ruta {
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 1.25rem;
+    text-transform: uppercase;
+}
+
+.detalle-numero,
+.resumen-numero {
+    color: #9dd5fb;
+    font-size: 2.6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.detalle-ruta span:last-child {
+    color: #c8d7e5;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+}
+
+.formulario-acceso {
+    align-self: center;
+    max-width: 26rem;
+    padding: 3rem;
+    width: 100%;
+}
+
+.formulario-acceso h2 {
+    color: var(--azul-profundo);
+    font-size: 2rem;
+    margin-top: 0.9rem;
+}
+
+.ayuda-formulario {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.8rem 0 2.4rem;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+
+input {
+    background: var(--hielo);
+    border: 1px solid var(--borde);
+    border-radius: 0.35rem;
+    color: var(--texto);
+    padding: 1rem;
+    width: 100%;
+}
+
+input::placeholder {
+    color: #a1afbb;
+}
+
+.formulario-acceso button {
+    align-items: center;
+    background: var(--azul);
+    border-radius: 0.35rem;
+    color: var(--blanco);
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.formulario-acceso button:hover,
+.bar button:hover {
+    background: var(--azul-profundo);
+    transform: translateY(-0.15rem);
+}
+
+#mensajeAcceso {
+    color: #b63b50;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+#pasaporte {
+    display: none;
+}
+
+.cabecera-pasaporte {
+    background: var(--azul-profundo);
+    color: var(--blanco);
+    padding: 1.5rem max(1.5rem, calc((100% - 74rem) / 2));
+}
+
+.cabecera-superior,
+.cabecera-contenido,
+.progreso-textos,
+.titulo-ruta {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecera-superior {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    padding-bottom: 1.4rem;
+}
+
+.estado-en-vivo {
+    color: #c8d7e5;
+    font-size: 0.8rem;
+}
+
+.estado-en-vivo span {
+    background: #55d89a;
+    border-radius: 50%;
+    display: inline-block;
+    height: 0.5rem;
+    margin-right: 0.4rem;
+    width: 0.5rem;
+}
+
+.cabecera-contenido {
+    gap: 2rem;
+    padding: 3.5rem 0 3rem;
+}
+
+.cabecera-contenido .etiqueta-seccion {
+    color: #9dd5fb;
+    margin-bottom: 0.8rem;
+}
+
+#saludo {
+    font-size: clamp(2rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+}
+
+.resumen-progreso {
+    align-items: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    color: #c8d7e5;
+    display: flex;
+    gap: 0.8rem;
+    padding-left: 2rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
+
+.progreso-contenedor {
+    max-width: 47rem;
+}
+
+.progreso-textos {
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+#progreso,
+#estadoPasaporte {
+    color: #c8d7e5;
+    font-size: 0.82rem;
+}
+
+#estadoPasaporte {
+    color: #9dd5fb;
+    text-align: right;
+}
+
+.barra {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 2rem;
+    height: 0.55rem;
+    overflow: hidden;
+}
+
+.barraProgreso {
+    background: #55d89a;
+    border-radius: inherit;
+    height: 100%;
+    transition: width 0.4s ease;
+    width: 0%;
+}
+
+.ruta-contenido {
+    margin: 0 auto;
+    max-width: 74rem;
+    padding: 4rem 1.5rem 5rem;
+}
+
+.titulo-ruta {
+    align-items: end;
+    margin-bottom: 2rem;
+}
+
+.titulo-ruta h2 {
+    color: var(--azul-profundo);
+    font-size: 2rem;
+    margin-top: 0.6rem;
+}
+
+.instruccion-ruta {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+
+#listaBares {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.bar {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 0.55rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 15rem;
+    padding: 1.4rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.bar:hover {
+    border-color: #9cc9e8;
+    box-shadow: 0 0.8rem 1.8rem rgba(13, 43, 77, 0.09);
+    transform: translateY(-0.2rem);
+}
+
+.numero-bar {
+    color: var(--azul-brillante);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.bar h3 {
+    color: var(--azul-profundo);
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.estado {
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+    margin-top: 0.7rem;
+}
+
+.bar button {
+    background: var(--azul-suave);
+    border-radius: 0.3rem;
+    color: var(--azul);
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: auto;
+    padding: 0.8rem;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.bar button:hover {
+    color: var(--blanco);
+}
+
+.bar button:disabled {
+    background: #eef2f5;
+    color: #8b9aa7;
+    cursor: default;
+}
+
+.bar-visitado {
+    background: #f9fbfc;
+}
+
+.bar-visitado h3 {
+    color: #71808c;
+}
+
+#mensajeSello {
+    color: var(--azul);
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-height: 1.2rem;
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 48rem) {
+    #acceso {
+        grid-template-columns: 1fr;
+        margin: 1.5rem auto;
+    }
+
+    .acceso-presentacion {
+        min-height: 28rem;
+    }
+
+    .marca {
+        margin-bottom: 2.5rem;
+    }
+
+    .detalle-ruta {
+        margin-top: 2.5rem;
+    }
+
+    .formulario-acceso {
+        padding: 3rem 2rem;
+    }
+
+    .cabecera-pasaporte {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    #listaBares {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 34rem) {
+    #acceso {
+        width: calc(100% - 1.5rem);
+    }
+
+    .acceso-presentacion {
+        min-height: 25rem;
+        padding: 2rem;
+    }
+
+    #tituloAcceso {
+        font-size: 2.5rem;
+    }
+
+    .cabecera-superior,
+    .cabecera-contenido,
+    .progreso-textos,
+    .titulo-ruta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cabecera-contenido {
+        gap: 2rem;
+        padding: 2.5rem 0;
+    }
+
+    .resumen-progreso {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-left: 0;
+        padding-top: 1.2rem;
+    }
+
+    #estadoPasaporte {
+        text-align: left;
+    }
+
+    .ruta-contenido {
+        padding-top: 2.5rem;
+    }
+
+    #listaBares {
+        grid-template-columns: 1fr;
+    }
+}

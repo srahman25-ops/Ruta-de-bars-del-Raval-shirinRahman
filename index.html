@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Pasaporte de bares</title>
+</head>
+
+<body>
+    <main class="contenedor-principal">
+        <section id="acceso" aria-labelledby="tituloAcceso">
+            <div class="acceso-presentacion">
+                <span class="marca">RAVAL / 19</span>
+                <p class="etiqueta-seccion">Ruta gastronómica</p>
+                <h1 id="tituloAcceso">Tu pasaporte para descubrir el Raval</h1>
+                <p class="texto-intro">Recorre 19 bares, descubre nuevos sabores y convierte cada parada en un recuerdo.</p>
+                <div class="detalle-ruta" aria-hidden="true">
+                    <span class="detalle-numero">19</span>
+                    <span>paradas<br>para disfrutar</span>
+                </div>
+            </div>
+
+            <form class="formulario-acceso" id="formularioAcceso">
+                <p class="etiqueta-seccion">Empieza tu ruta</p>
+                <h2>¿Cómo te llamas?</h2>
+                <p class="ayuda-formulario">Usaremos tu nombre para personalizar el pasaporte.</p>
+                <label for="nombre">Tu nombre</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" autocomplete="name">
+                <button id="btnEntrar" type="submit">Abrir mi pasaporte <span aria-hidden="true">→</span></button>
+                <p id="mensajeAcceso" role="alert"></p>
+            </form>
+        </section>
+
+        <section id="pasaporte" aria-labelledby="saludo">
+            <header class="cabecera-pasaporte">
+                <div class="cabecera-superior">
+                    <span class="marca marca-clara">RAVAL / 19</span>
+                    <span class="estado-en-vivo"><span aria-hidden="true"></span>Pasaporte activo</span>
+                </div>
+                <div class="cabecera-contenido">
+                    <div>
+                        <p class="etiqueta-seccion">Tu recorrido</p>
+                        <h1 id="saludo"></h1>
+                    </div>
+                    <div class="resumen-progreso">
+                        <span class="resumen-numero" aria-hidden="true">19</span>
+                        <span>experiencias<br>en el Raval</span>
+                    </div>
+                </div>
+                <div class="progreso-contenedor">
+                    <div class="progreso-textos">
+                        <p id="progreso"></p>
+                        <p id="estadoPasaporte"></p>
+                    </div>
+                    <div class="barra" role="progressbar" aria-label="Progreso de la ruta" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="barraProgreso"></div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="ruta-contenido" aria-labelledby="tituloParadas">
+                <div class="titulo-ruta">
+                    <div>
+                        <p class="etiqueta-seccion">Mapa de experiencias</p>
+                        <h2 id="tituloParadas">Tus paradas</h2>
+                    </div>
+                    <p class="instruccion-ruta">Sella cada visita al completar tu parada</p>
+                </div>
+                <div id="listaBares"></div>
+                <p id="mensajeSello" role="status" aria-live="polite"></p>
+            </section>
+        </section>
+    </main>
+
+    <script src="bares.js"></script>
+</body>
+
+</html>
